@@ -11,44 +11,43 @@ public class Registration {
         while (true) {
             System.out.println("Please pick an option");
             System.out.println("1. Register");
-            System.out.println("2. Login");
-            System.out.println("3. Exit");
             System.out.print("Enter your choice: ");
             String choice = scanner.nextLine();
 
             if (choice.equals ("1")) {
 
-                System.out.print("Enter your username: ");
-                String username = scanner.nextLine();
-                if (userDatabase.containsKey(username)) {
-                    System.out.println("Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.");
-                
-             } else {
-                System.out.print("Enter your password: ");
-                String password = scanner.nextLine();
-                userDatabase.put(username,password);
-                System.out.println("User registered successfully!");
+                System.out.print("Enter your email address: ");
+                String email = scanner.nextLine();
 
-             }
-            } else if (choice.equals("2")) {
-                System.out.print("Enter your username: ");
-                String username = scanner.nextLine ();
-                if (userDatabase.containsKey(username)) {
-                    System.out.print("Enter your password: ");
-                    String password = scanner.nextLine();
-                    if (userDatabase.get(username).equals(password)) {
-                        System.out.println("Login successful!");
+// Validate username should contain an underscore and be no more than five characters in length      
+                System.out.print("Enter your username: (< 5 characters with underscore) ");
+                String username = scanner.nextLine().trim();
+                if (!(username.contains("_") && username.length() <= 5)) {
+                    System.out.println("Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.");
                     } else {
-                        System.out.println("Username not found. Please register first");
-                    }
-                } else if (choice.equals("3")) {
-                    System.out.println("Exiting the program. Goodbye!");
-                    break;
+            System.out.println("Username successfully captured.");
+        }
+                
+// Validate phone number should be in the format of digits only and be 10 digits long
+                System.out.print("Enter your phone number: (10 digits) ");
+                String phoneNumber = scanner.nextLine().trim();
+                if (!(phoneNumber.matches("\\d{10}"))) {
+                    System.out.println("Phone number is not correctly formatted; please ensure that your phone number contains only digits and is 10 digits long.");
+             } else {
+                System.out.print("Enter your password: (At least 8 characters, with a capital letter, a number and a special character) ");
+                String password = scanner.nextLine().trim();
+                if (!(password.matches(".*[A-Z].*") && password.matches(".*[0-9].*") && password.matches(".*[!@#$%^&*()-+].*") && password.length() >= 8)) {
+                    System.out.println("Password is not correctly formatted; please ensure that your password contains at least 8 characters, a capital letter, a number and a special character.");
                 } else {
-                    System.out.println("Invalid choice. Please try again.");
+                    userDatabase.put(username, password);
+                    System.out.println("User registered successfully!");
+                }
+            }
+            } 
                 }
             }
         }
-    }}
+    
+
 
 
