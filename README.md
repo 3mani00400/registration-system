@@ -11,4 +11,3 @@ This program allows users to register and login using a username, phone number, 
 
 ## How to Run
 javac Registration.java
-java Registration
