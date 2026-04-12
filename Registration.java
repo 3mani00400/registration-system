@@ -32,7 +32,7 @@ public class Registration {
 // Validate phone number should be in the format of digits only and be 10 digits long
                 System.out.print("Enter your phone number: (10 digits) ");
                 String phoneNumber = scanner.nextLine().trim();
-                if (!(phoneNumber.matches("\\d{10}"))) {
+                if (!(phoneNumber.matches("\\+27\\d{10}"))) {   
                     System.out.println("Phone number is incorrectly formatted or does not contain international code.");
               } else {
             System.out.println("Phone number successfully added.");
@@ -50,16 +50,17 @@ public class Registration {
                 // Login
                 System.out.print("Enter your username: ");
                 String username = scanner.nextLine();
-                if (userDatabase.containsKey(username)) {
+                if (!(username.contains("_") && username.length() <= 5)) {
                     System.out.print("Enter your password: ");
                     String password = scanner.nextLine();
-                    if (userDatabase.get(username).equals(password)) {
-                        System.out.println("Welcome <first name>, <last name> it is great to see you!");
+                    
+                    if (!(password.matches(".*[A-Z].*") && password.matches(".*[0-9].*") && password.matches(".*[!@#$%^&*()-+].*") && password.length() >= 8)) {
+                        System.out.println("Username or password is incorrect.");
                     } else {
                         System.out.println("Incorrect password.");
                     }
                 } else {
-                    System.out.println("Username or password incorrect, please try again.");
+                    System.out.println("Welcome <user first name>, <user last name> it is great to see you!");
                 }
             } 
         }

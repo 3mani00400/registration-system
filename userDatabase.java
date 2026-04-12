@@ -11,4 +11,9 @@ public class userDatabase {
         throw new UnsupportedOperationException("Unimplemented method 'get'");
     }
 
+    public static void put(String username, String password) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'put'");
+    }
+
 }
