@@ -28,4 +28,5 @@ This program allows users to register and login using username, phone number and
 - ## How to Run
 - Javac QuickChat.java
 
-- 
+## Updated QuickChat Youtube Video
+https://youtu.be/Y9kLUNwyUT4
