@@ -1,0 +1,22 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import org.json.JSONObject;
+
+public void storeMessage() {
+    File  jsonFile = new File("stored_message.json");
+
+    try {
+        if (!jsonFile.exists()) {
+            jsonFile.createNewFile();
+        }
+
+    } catch (IOException e) {
+        System.out.println("Error creating file: " + e.getMessage());
+        return;
+    }
+}
+
+JSONObject messageData = new JSONObject();
+json.put("MessageID", messageID);
+json
