@@ -30,3 +30,20 @@ This program allows users to register and login using username, phone number and
 
 ## Updated QuickChat Youtube Video
 https://youtu.be/Y9kLUNwyUT4
+
+## POE DESCRIPTION 2026
+This program allows users to register and login username, phone number and password as well as send messages, discard or store messages typed
+
+## Features
+- Username validation (must contain "_" and < 5 characters)
+- Password validation (8+ characters, capital letter, number and special character)
+- Phone number validation (10 digits)
+- Recipients validation (10 digits)
+- Message validation (< 250 characters)
+
+## How to Run
+- Javac QuickChatPart3.java
+
+## Updated QuickChat Youtube Video
+https://youtu.be/Rue4YWuJ7AI
+
